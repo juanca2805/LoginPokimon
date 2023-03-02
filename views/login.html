@@ -1,0 +1,27 @@
+<link rel="StyleSheet" href="/css/style2.css" type="text/css" />
+<div class="container" ng-app="app" ng-controller="MainController">
+
+  <h1>Inicie sesion maistro pokimon!</h1>
+  <form name="loginForm" class="form-section" action="/auth" method="post">
+    <div class="pwd-section">
+      <div class="field">
+        
+        <input type="text" ng-model="pwd" maxlength="10" placeholder="Entrenador" id="user"  name="user" required />
+      </div>
+      <div class="field2">
+        
+        <input type="password" ng-model="pwd" maxlength="10" placeholder="password" id="pass"  name="pass" required />
+      </div> 
+      <div class="field3">
+        
+        <input  type="submit" value="Iniciar Sesion">
+      </div>
+      
+      <div class="indicator">
+        <img ng-hide="pwd" alt="default" src="http://wallpapercave.com/wp/pvA2GrC.png" title="default" />
+      
+      </div>
+    </div>
+  </form>
+  <br />
+</div>

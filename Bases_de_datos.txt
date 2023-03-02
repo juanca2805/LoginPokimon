@@ -1,0 +1,186 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 02-12-2022 a las 17:22:46
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `pokimon`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `centro_pokemon`
+--
+
+CREATE TABLE `centro_pokemon` (
+  `id_centro` int(10) NOT NULL,
+  `curar_pokemon` varchar(100) NOT NULL,
+  `alimentar` varchar(100) NOT NULL,
+  `Entrenar_pokemon` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ciudad`
+--
+
+CREATE TABLE `ciudad` (
+  `id_Ciudad` int(11) NOT NULL,
+  `nombre_Ciudad` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ciudad`
+--
+
+INSERT INTO `ciudad` (`id_Ciudad`, `nombre_Ciudad`) VALUES
+(0, 'pueblo paleta'),
+(0, 'alola'),
+(1, 'pueblo paleta'),
+(2, 'alola');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `entrenadores`
+--
+
+CREATE TABLE `entrenadores` (
+  `id` int(11) NOT NULL,
+  `user` varchar(20) NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `pass` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `entrenadores`
+--
+
+INSERT INTO `entrenadores` (`id`, `user`, `correo`, `direccion`, `pass`) VALUES
+(1, 'pepe', 'pepe@gmail.com', 'pueblo paleta', 'pepe123');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `gymnasio`
+--
+
+CREATE TABLE `gymnasio` (
+  `id_gym` int(10) NOT NULL,
+  `nombre_gym` varchar(100) NOT NULL,
+  `tipo_gym` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `gymnasio`
+--
+
+INSERT INTO `gymnasio` (`id_gym`, `nombre_gym`, `tipo_gym`) VALUES
+(0, 'gymnasio_paleta', 'gymnasio_agua');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `medallas`
+--
+
+CREATE TABLE `medallas` (
+  `id_medalla` int(10) NOT NULL,
+  `medalla_agua` varchar(100) NOT NULL,
+  `medalla_planta` varchar(100) NOT NULL,
+  `medalla_electricidad` varchar(100) NOT NULL,
+  `medalla_fuego` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pokimon`
+--
+
+CREATE TABLE `pokimon` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `tipo` varchar(50) NOT NULL,
+  `punt_ataque` double NOT NULL,
+  `punt_defensa` double NOT NULL,
+  `Vida_pokimon` varchar(100) NOT NULL DEFAULT '50%'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pokimon`
+--
+
+INSERT INTO `pokimon` (`id`, `nombre`, `tipo`, `punt_ataque`, `punt_defensa`, `Vida_pokimon`) VALUES
+(12, 'pepe', 'tipo fuego', 40, 50, ''),
+(13, 'pepe', 'fuego/volador', 50, 50, ''),
+(14, 'rock', 'roca', 10, 100, ''),
+(15, 'squirtle', 'agua', 50, 30, ''),
+(16, 'bulbasur', 'agua', 50, 30, '20%'),
+(17, 'vulpix', 'agua', 50, 30, '50%');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `centro_pokemon`
+--
+ALTER TABLE `centro_pokemon`
+  ADD PRIMARY KEY (`id_centro`);
+
+--
+-- Indices de la tabla `entrenadores`
+--
+ALTER TABLE `entrenadores`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `gymnasio`
+--
+ALTER TABLE `gymnasio`
+  ADD PRIMARY KEY (`id_gym`);
+
+--
+-- Indices de la tabla `medallas`
+--
+ALTER TABLE `medallas`
+  ADD PRIMARY KEY (`id_medalla`);
+
+--
+-- Indices de la tabla `pokimon`
+--
+ALTER TABLE `pokimon`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `pokimon`
+--
+ALTER TABLE `pokimon`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

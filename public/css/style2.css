@@ -1,0 +1,75 @@
+body {
+  background: #BBC5BC url('http://imgview.info/download/20150423/cute-pokemon-backgrounds-1440x900.jpg') no-repeat;
+  background-size: cover;
+  font-size: 18px;
+}
+
+.container {
+  text-align: center;
+  padding: 20px 60px;
+}
+
+h1 {
+  color: #333;
+}
+
+.form-section {
+  width: 100%;
+  height: 500px;
+  background: #333;
+  color: #035b77;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  -moz-box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.pwd-section {
+  padding: 19px 140px;
+}
+
+.field {
+  padding: 40px;
+  padding-right: 10px;
+  float: left;
+}
+.field2 {
+  padding: 40px;
+  padding-right: 500px;
+  float: left;
+}
+.field3 {
+  padding: 40px;
+  padding-right: 80px;
+  float: left;
+}
+
+input {
+  width: 500px;
+  padding-top: 5px;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #0071e6;
+  color: #ccc;
+  letter-spacing: 0.1em;
+}
+
+input:focus {
+  outline: 0;
+  border-color: #00c0ca;
+}
+
+.indicator {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+  float: left;
+}
